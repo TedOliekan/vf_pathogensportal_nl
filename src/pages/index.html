@@ -2,15 +2,8 @@
 @@include('./header - landing page.html')
 
 
-<br>
-<br>
-<br>
-<h3>Introduction Pathogens Portal Netherlands</h3>
-<p>Pathogens Portal Netherlands provides information about available datasets, resources, tools and services related to pathogens research in the Netherlands.  This portal is complimentary to the Pathogens Portal (Pathogens) with the aim to showcase and provide quick access to a collection of biomolecular and other pathogen related data for open science from Dutch institutions and collaborations .  The first datasets that are made available are from Arboviruses, with others like Mpox to follow. We encourages Dutch researchers to share their data in compliance with the FAIR Data Principles, which promote the Findability, Accessibility, Interoperability, and Reusability of data, using publicly accessible and FAIR digital repositories . See more details under the section “Share Data”. For more questions regarding data sharing via this portal contact info@pathogensportal.nl.</p>
 
-<br>
-<h3>Acknowledgement</h3>
-<p>All publications using data or other content from Pathogens Portal Netherlands should include an acknowledgement to show that services of this portal: www.pathogensportal.nl have been used. Where datasets were used to conduct research, please acknowledge the original authors and their primary publications that are associated with the datasets.</p>
+
 
 
 <!--<div class="vf-body">
@@ -27,6 +20,12 @@
     </div>-->
 
 	<!-- Main intro -->
+<div class="vf-content">
+	<img src="./images/CV19DP_banner3.jpg" style="width:100%">
+<!--<h3>Introduction Pathogens Portal Netherlands</h3>-->
+<br>
+<br>
+<p>Pathogens Portal Netherlands provides information about available datasets, resources, tools and services related to pathogens research in the Netherlands.  This portal is complimentary to the Pathogens Portal (Pathogens) with the aim to showcase and provide quick access to a collection of biomolecular and other pathogen related data for open science from Dutch institutions and collaborations .  The first datasets that are made available are from Arboviruses, with others like Mpox to follow. We encourages Dutch researchers to share their data in compliance with the FAIR Data Principles, which promote the Findability, Accessibility, Interoperability, and Reusability of data, using publicly accessible and FAIR digital repositories . See more details under the section “Share Data”. For more questions regarding data sharing via this portal contact info@pathogensportal.nl.</p>
 <hr>
 	<div class="vf-body">
   <div class="vf-grid | vf-grid__col-3 vf-grid--has-sidebar vf-u-margin__top--800">
@@ -69,8 +68,7 @@
           <img width="600" src="./images/CV19DP_banner subpage.jpg" alt="Pathogens Portal NL">
           <!-- <span class="vf-logo__text">Covid 19 Portal</span>-->
         </a>
-<br>
-<br>
+
 		<!--         <figure class="vf-figure">
           <a href="./images/CV19DP_banner subpage.jpg"><img src="{{section.img.url}}" title="ome" alt="some img title"></a>
         </figure>-->
@@ -78,6 +76,33 @@
     </div>
   </section>
   </div>
+  
+   <div class="vf-container__content vf-content vf-grid__col--span-1">
+      <h2 class="vf-links__heading">Latest news:</h2>
+      <article class="vf-summary vf-summary--publication">
+	    <section class="vf-card-container">
+        <div class="vf-card-container__inner">
+          <article class="vf-card vf-card-normal">
+            <a class="vf-card__link" label="Swiss and Norwegian national pathogens portals launched" href="https://www.pathogensportal.org/news/swiss-and-norwegian-national-pathogens-portals-launched?nid=173">
+              <img src="https://cms.pathogensportal.org/sites/default/files/2024-09/swiss%20and%20norway%20screenshot.jpg" alt="" class="vf-card__image" loading="lazy">
+            </a>
+            <div class="vf-card__content">
+              <h3 class="vf-card__title">
+                <a class="vf-card__link" label="Swiss and Norwegian national pathogens portals launched" href="https://www.pathogensportal.org/news/swiss-and-norwegian-national-pathogens-portals-launched?nid=173">Swiss and Norwegian national pathogens portals launched</a>
+              </h3>
+               <!--<p class="vf-card__text">In this repository you will find the set of pictures collected by the MosquitoAlert project since 2014 for image classification tasks.</p>
+             <a label="Sign up to participate" href="#" class="vf-link">Sign up to participate ></a>-->
+            </div>
+          </article>
+        </div>
+      </section>
+	
+    </div>
+  </div>
+  <!-- Examples 
+  @@include('./examples.html')-->
+</div>
+<!-- end main content -->
 
 <!--  
     <base href="https://visual-framework.github.io/vf-covid19-boilerplate/">
@@ -138,6 +163,12 @@
 </div>
  -->
 </div>
-<hr>
+	      <div class="vf-component__container">
+        <a label="Share new pathogens data" [routerLink]="['/submit-data']" class="vf-box vf-box--is-link vf-box--normal vf-u-background-color--green--dark" href="mailto:info@pathogensportal.nl">
+          <h3 class="vf-box__heading">Acknowledgement</h3> 
+          <p class="vf-box__text vf-text-body--2">All publications using data or other content from Pathogens Portal Netherlands should include an acknowledgement to show that services of this portal: www.pathogensportal.nl have been used. Where datasets were used to conduct research, please acknowledge the original authors and their primary publications that are associated with the datasets.</p>
+        </a>
+      </div>
+
 
  @@include('./footer.html')
