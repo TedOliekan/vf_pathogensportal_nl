@@ -1,0 +1,648 @@
+{
+  "name": "Netherlands Pathogens Portal - Arboviruses",
+  "release_date": "2025-05-22",
+  "description": "Datasets from Pathogens Portal Netherlands covering arboviruses in birds, serology, sequences, isolates, samples, experimental data, literature, and surveys.",
+  "entry_count": 15,
+  "entries": [
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD001"
+        },
+        {
+          "name": "name",
+          "value": "Surveillance for arboviruses in birds in captivity in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Data from captive birds including date of death and sampling, location, bird species, and molecular testing results for Usutu virus (USUV)."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1510"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "arbovirus"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "captive birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": [
+        {
+          "dbname": "ICTV",
+          "dbkey": "VMR1009103"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD002"
+        },
+        {
+          "name": "name",
+          "value": "Surveillance for arboviruses in free-ranging live birds in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Data from free-ranging live birds including date and location of sampling, bird species, and molecular testing results for USUV and West Nile virus (WNV)."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1511"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "arbovirus"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "free-ranging birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD003"
+        },
+        {
+          "name": "name",
+          "value": "Surveillance for arboviruses in free-ranging dead birds in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Data from free-ranging dead birds including date and location of sampling, bird species, and molecular testing results for USUV and WNV."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1512"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "arbovirus"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "dead birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD004"
+        },
+        {
+          "name": "name",
+          "value": "Study of arboviruses in mosquitoes at bird ringing sites in the Netherlands, 2020-2022"
+        },
+        {
+          "name": "description",
+          "value": "Data from mosquitoes including sampling dates and locations, mosquito species, and molecular testing results for USUV and WNV."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1513"
+        },
+        {
+          "name": "organism",
+          "value": "Mosquito species"
+        },
+        {
+          "name": "tags",
+          "value": "arbovirus"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "mosquitoes"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD005"
+        },
+        {
+          "name": "name",
+          "value": "Serosurveillance for arboviruses in free-ranging live birds in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Serological testing results for USUV and WNV in free-ranging live birds, including date and location of sampling and bird species."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1514"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "serology"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "free-ranging birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD006"
+        },
+        {
+          "name": "name",
+          "value": "Multiantigen serology and diagnostic algorithm for arbovirus infections in southeast Europe"
+        },
+        {
+          "name": "description",
+          "value": "Serological data from hospitalized adults in southeast Europe, including ELISA, protein microarray, VNT, and IIFT results for multiple arboviruses."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1515"
+        },
+        {
+          "name": "organism",
+          "value": "Human patients"
+        },
+        {
+          "name": "tags",
+          "value": "serology"
+        },
+        {
+          "name": "tags",
+          "value": "arbovirus"
+        },
+        {
+          "name": "tags",
+          "value": "southeast Europe"
+        },
+        {
+          "name": "tags",
+          "value": "diagnostic algorithm"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD007"
+        },
+        {
+          "name": "name",
+          "value": "Field serology of petting zoo and poultry chickens in the Netherlands, 2020-2022"
+        },
+        {
+          "name": "description",
+          "value": "Serological results from petting zoo and backyard chickens, including sampling dates, locations, and test results for WNV and USUV."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1516"
+        },
+        {
+          "name": "organism",
+          "value": "Chickens"
+        },
+        {
+          "name": "tags",
+          "value": "serology"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "chickens"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD008"
+        },
+        {
+          "name": "name",
+          "value": "Genomic sequences of Usutu virus (USUV) from birds in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Genomic sequences of USUV obtained from free-ranging dead birds, free-ranging live birds, and dead captive birds."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1517"
+        },
+        {
+          "name": "organism",
+          "value": "Usutu virus"
+        },
+        {
+          "name": "tags",
+          "value": "genomics"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD009"
+        },
+        {
+          "name": "name",
+          "value": "Genomic sequences of West Nile virus (WNV) from mosquitoes and birds in the Netherlands, 2020"
+        },
+        {
+          "name": "description",
+          "value": "Genomic sequences of WNV obtained from Culex mosquitoes, birds, and chicken feces."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1518"
+        },
+        {
+          "name": "organism",
+          "value": "West Nile virus"
+        },
+        {
+          "name": "tags",
+          "value": "genomics"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "mosquitoes"
+        },
+        {
+          "name": "tags",
+          "value": "birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD010"
+        },
+        {
+          "name": "name",
+          "value": "USUV and WNV viral isolates produced by Erasmus MC"
+        },
+        {
+          "name": "description",
+          "value": "Viral isolates of USUV and WNV available via the European Virus Archive."
+        },
+        {
+          "name": "url",
+          "value": "https://www.european-virus-archive.com"
+        },
+        {
+          "name": "organism",
+          "value": "USUV and WNV"
+        },
+        {
+          "name": "tags",
+          "value": "viral isolates"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "Erasmus MC"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD011"
+        },
+        {
+          "name": "name",
+          "value": "Samples of free-ranging live birds in the Netherlands, 2016-2022"
+        },
+        {
+          "name": "description",
+          "value": "Sera, swabs, and feathers from wild birds, including location, date of sampling, and species information."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1519"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "samples"
+        },
+        {
+          "name": "tags",
+          "value": "wild birds"
+        },
+        {
+          "name": "tags",
+          "value": "Netherlands"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD012"
+        },
+        {
+          "name": "name",
+          "value": "Differential susceptibility of human motor neurons to infection with Usutu and West Nile virus"
+        },
+        {
+          "name": "description",
+          "value": "Study assessing the susceptibility of human iPSC-derived neurons to USUV and WNV infection."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1520"
+        },
+        {
+          "name": "organism",
+          "value": "Human neurons"
+        },
+        {
+          "name": "tags",
+          "value": "experimental data"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "neurons"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD013"
+        },
+        {
+          "name": "name",
+          "value": "Usutu virus and West Nile virus use a transcellular route of neuroinvasion across an in vitro model of the human blood\u2013brain barrier"
+        },
+        {
+          "name": "description",
+          "value": "Study identifying the mode of invasion across an in vitro human blood-brain barrier by USUV and WNV."
+        },
+        {
+          "name": "url",
+          "value": "https://www.ebi.ac.uk/biostudies/studies/S-BSST1521"
+        },
+        {
+          "name": "organism",
+          "value": "Human blood-brain barrier model"
+        },
+        {
+          "name": "tags",
+          "value": "experimental data"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "blood-brain barrier"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD014"
+        },
+        {
+          "name": "name",
+          "value": "A literature-based dataset of bird species hosts of or susceptible to MDBs"
+        },
+        {
+          "name": "description",
+          "value": "Dataset resulting from a systematic literature review, including bird species with serological and/or molecular evidence of WNV and USUV infections."
+        },
+        {
+          "name": "url",
+          "value": "https://www.pathogensportal.nl/literature.html"
+        },
+        {
+          "name": "organism",
+          "value": "Various bird species"
+        },
+        {
+          "name": "tags",
+          "value": "literature"
+        },
+        {
+          "name": "tags",
+          "value": "USUV"
+        },
+        {
+          "name": "tags",
+          "value": "WNV"
+        },
+        {
+          "name": "tags",
+          "value": "birds"
+        }
+      ],
+      "cross_references": []
+    },
+    {
+      "fields": [
+        {
+          "name": "id",
+          "value": "PPNAD015"
+        },
+        {
+          "name": "name",
+          "value": "MosquitoWise survey: Assessing perceptions towards mosquitoes and mosquito-borne viruses in Europe"
+        },
+        {
+          "name": "description",
+          "value": "Survey to understand knowledge and perceptions of mosquitoes and mosquito-borne viruses in Europe."
+        },
+        {
+          "name": "url",
+          "value": "https://www.nature.com/articles/s41598-023-45678-w"
+        },
+        {
+          "name": "organism",
+          "value": "Human participants"
+        },
+        {
+          "name": "tags",
+          "value": "survey"
+        },
+        {
+          "name": "tags",
+          "value": "mosquitoes"
+        },
+        {
+          "name": "tags",
+          "value": "public perception"
+        },
+        {
+          "name": "tags",
+          "value": "Europe"
+        }
+      ],
+      "cross_references": []
+    }
+  ]
+}
