@@ -1,0 +1,273 @@
+@@include('./header - veo.html')
+
+<style>
+/* GRID SETUP: responsive, automatic columns */
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* CARD STYLE */
+.dataset-card {
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: 0.15s ease;
+}
+
+.dataset-card:hover {
+  background: #f5f5f5;
+  border-color: #b5b5b5;
+}
+
+/* TITLE BLUE */
+.dataset-card h4 a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.dataset-card h4 a:hover {
+  text-decoration: underline;
+}
+
+/* SOURCE */
+.dataset-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* CATEGORY ICON */
+.dataset-category {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+/* SPACING */
+.dataset-section {
+  margin-bottom: 40px;
+}
+
+.dataset-section h4 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* SEARCH BOX */
+#datasetSearch {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* "No results" message */
+#noResults {
+  display: none;
+  font-style: italic;
+  color: #999;
+  margin-top: 20px;
+}
+</style>
+
+<div class="vf-content">
+
+<!-- Banner at the very top -->
+<a href="./veo.html">
+  <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
+</a>
+
+<br><br>
+
+<h3>Introduction: Genomic Data</h3>
+<p>
+Welcome to the VEO Genomic Data portal. This page provides access to curated genomic and metagenomic datasets generated within the VEO project. These data include pathogen genomes, environmental sequencing, and host-associated microbiomes, supporting research into viral spread, antimicrobial resistance, and pathogen evolution.
+</p>
+
+<h3>Available Genomic Datasets</h3>
+
+<!-- SEARCH BOX -->
+<input type="text" id="datasetSearch" placeholder="Search datasets...">
+
+<!-- GENOMIC DATASETS -->
+<div class="dataset-section">
+<h4>🧬 Genomic datasets</h4>
+<div class="dataset-grid" id="genomicDatasets">
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: Figshare</div>
+  <h4><a href="https://figshare.com/projects/SARS-CoV-2_RBD_single_mutant_AlphaFold2_structures/150089">SARS-CoV-2 RBD AlphaFold structures</a></h4>
+  <p>AlphaFold predicted structures of all single amino acid mutants in the receptor binding domain</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: Zenodo</div>
+  <h4><a href="https://doi.org/10.5281/zenodo.10057335">SARS-CoV-2 co infection dataset</a></h4>
+  <p>Whole genome sequencing data and analysis of SARS-CoV-2 samples containing multiple lineages</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: ENA</div>
+  <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB37711">Clinical isolate genomes Denmark</a></h4>
+  <p>Genome collection of clinical isolates across Denmark during a single day</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: ASM Journals</div>
+  <h4><a href="https://journals.asm.org/doi/10.1128/msystems.00191-22">Global plasmidomes</a></h4>
+  <p>Plasmid community sequences from sewage samples across multiple countries</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJEB41171">Plasmidomes BioProject</a></h4>
+  <p>Plasmid sequencing dataset used for antimicrobial resistance identification</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB103059">Greenland midden microbiomes</a></h4>
+  <p>Metagenomes from archaeological middens used for pathogen detection</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB85755">Mosquito microbiota dataset</a></h4>
+  <p>Bacterial communities associated with mosquito species</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: DTU internal server</div>
+  <h4><a href="#">Geese microbiome dataset</a></h4>
+  <p>Microbiome sequencing data from geese samples in Greenland</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/search/all/?term=PRJEB102994">Single cell cow microbiome sequencing</a></h4>
+  <p>Single cell sequencing data used to detect E coli infections and antimicrobial resistance</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: DTU + IFREMER servers</div>
+  <h4><a href="#">Greenland meltwater metagenomics</a></h4>
+  <p>Environmental metagenomic sequencing of Greenland ice melt water</p>
+</div>
+
+</div>
+</div>
+
+<!-- VIRAL DATASETS -->
+<div class="dataset-section">
+<h4>🦠 Virus-specific datasets</h4>
+<div class="dataset-grid" id="viralDatasets">
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=OR536441%3AOR536499%5BACCN%5D">Norovirus genomes chronic infections</a></h4>
+  <p>Consensus genome sequences from longitudinal samples of immunocompromised individuals</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: ENA</div>
+  <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB65987">Norovirus raw sequencing reads</a></h4>
+  <p>Raw sequencing reads from metagenomic samples of chronic infections</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI nuccore accessions</div>
+  <h4><a href="#">Enteric viruses Thailand</a></h4>
+  <p>Viral contigs from stool samples of patients with acute infections</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: GISAID</div>
+  <h4><a href="https://gisaid.org">SARS-CoV-2 genomes wastewater Netherlands Belgium</a></h4>
+  <p>Consensus genomes derived from wastewater surveillance samples</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: GISAID</div>
+  <h4><a href="https://gisaid.org">Transatlantic spread of H5N1 influenza virus</a></h4>
+  <p>Genome sequence data used to study spread of avian influenza viruses</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: GenBank</div>
+  <h4><a href="#">Human metapneumovirus genomes</a></h4>
+  <p>Genome sequence data collected from hospitals and general practitioners</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: GISAID</div>
+  <h4><a href="https://gisaid.org">Influenza N2 antigenic dataset</a></h4>
+  <p>Antigenic and genetic dataset of human influenza N2 virus genes</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: Pathogens Portal</div>
+  <h4><a href="https://www.pathogensportal.nl/sequences.html">USUV sequences Netherlands</a></h4>
+  <p>Usutu virus genomes from bird surveillance in the Netherlands</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: Pathogens Portal</div>
+  <h4><a href="https://www.pathogensportal.nl/sequences.html">WNV sequences Netherlands</a></h4>
+  <p>West Nile virus genomes from birds mosquitoes and environmental samples</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI nuccore accessions</div>
+  <h4><a href="#">West Nile virus genome collection Greece</a></h4>
+  <p>Genome sequences of West Nile virus collected across multiple years</p>
+</div>
+
+<div class="dataset-card">
+  <div class="dataset-meta">Source: NCBI</div>
+  <h4><a href="https://www.ncbi.nlm.nih.gov/nuccore/2986863443">Usutu virus genome GR-1439h 2024</a></h4>
+  <p>Genome sequence of Usutu virus isolate</p>
+</div>
+
+</div>
+</div>
+
+<!-- NO RESULTS MESSAGE -->
+<div id="noResults">No datasets found matching your search.</div>
+
+@@include('./footer.html')
+
+<script>
+const searchInput = document.getElementById('datasetSearch');
+const datasetGrids = document.querySelectorAll('.dataset-grid');
+const noResults = document.getElementById('noResults');
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  let anyVisible = false;
+
+  datasetGrids.forEach(grid => {
+    const cards = grid.querySelectorAll('.dataset-card');
+    cards.forEach(card => {
+      const title = card.querySelector('h4').innerText.toLowerCase();
+      const desc = card.querySelector('p').innerText.toLowerCase();
+      if (title.includes(query) || desc.includes(query)) {
+        card.style.display = '';
+        anyVisible = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+  // Show or hide "No results" message
+  noResults.style.display = anyVisible ? 'none' : 'block';
+});
+</script>

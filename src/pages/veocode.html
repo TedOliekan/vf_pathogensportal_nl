@@ -1,0 +1,393 @@
+@@include('./header - veo.html')
+
+<style>
+/* GRID SETUP */
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* CARD STYLE */
+.dataset-card {
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: 0.15s ease;
+}
+
+.dataset-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: #b5b5b5;
+}
+
+/* CATEGORY COLORS */
+.dataset-card.category-portal { border-left: 4px solid #1a73e8; }
+.dataset-card.category-code { border-left: 4px solid #fbbc05; }
+.dataset-card.category-tool { border-left: 4px solid #34a853; }
+.dataset-card.category-model { border-left: 4px solid #ea4335; }
+
+/* TEXT */
+.dataset-card h4 a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.dataset-card h4 a:hover {
+  text-decoration: underline;
+}
+
+.dataset-desc {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* INPUTS */
+#guideSearch, #categoryFilter {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* LEGEND */
+.dataset-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0 25px 0;
+  font-size: 14px;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.legend-portal { background: #1a73e8; }
+.legend-code { background: #fbbc05; }
+.legend-tool { background: #34a853; }
+.legend-model { background: #ea4335; }
+</style>
+
+<div class="vf-content">
+
+<a href="./veo.html">
+  <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
+</a>
+
+<br><br>
+
+<h3>Introduction: Code</h3>
+<p>
+This page provides access to code, models, portals and software tools, pipelines, and databases developed within the VEO project. These resources support genomic analysis, wastewater surveillance, epidemiological modelling, and digital data integration. Together, they enable researchers to process large-scale datasets, explore pathogen evolution, and develop data-driven approaches for infectious disease surveillance and preparedness.
+</p>
+
+<!-- Search + Filter -->
+<div style="display:flex; flex-wrap:wrap; gap:12px;">
+  <input type="text" id="guideSearch" placeholder="Search code...">
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="code">Code</option>
+    <option value="model">Model</option>
+<option value="portal">Portal</option>
+ <option value="tool">Tool</option>
+  </select>
+</div>
+<h3>Available Code, Models, Portals and Tools</h3>
+<!-- LEGEND -->
+<div class="dataset-legend">
+
+  <div class="legend-item">
+    <div class="legend-color legend-code"></div>
+    <span>Code</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color legend-model"></div>
+    <span>Model</span>
+  <div class="legend-item">
+    <div class="legend-color legend-portal"></div>
+    <span>Portal</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color legend-tool"></div>
+    <span>Tool</span>
+  </div>
+
+  </div>
+</div>
+
+
+
+<div class="dataset-grid" id="guideGrid">
+
+<!-- 1 -->
+<div class="dataset-card category-portal">
+<h4><a href="https://github.com/kooplex">Kooplex Platform Core</a></h4>
+<p class="dataset-desc">Collaborative platform for storing and analysing data, and publishing interactive reports and applications.</p>
+<p><strong>Reference:</strong> <a href="https://arxiv.org/pdf/1911.09553">View publication</a></p>
+</div>
+
+<!-- 2 -->
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/csabaiBio/vcf_database">CoVEO VCF database</a></h4>
+<p class="dataset-desc">R scripts and SQL schema for importing and querying SARS-CoV-2 VCF files.</p>
+<p><strong>Reference:</strong> <a href="https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.001188#R38">View publication</a></p>
+</div>
+
+<!-- 3 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/csabaiBio/coveo">CoVEO variant explorer</a></h4>
+<p class="dataset-desc">Shiny app for visualizing SARS-CoV-2 variant prevalence and mutations.</p>
+<p><strong>Reference:</strong> <a href="https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.001188#R38">View publication</a></p>
+</div>
+
+<!-- 4 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/csabaiBio/coveo_pcr_primers2021">CoVEO PCR primers mutations</a></h4>
+<p class="dataset-desc">Pipeline identifying mutations overlapping PCR primer regions.</p>
+<p><strong>Reference:</strong> <a href="https://www.nature.com/articles/s41598-022-21953-3">View publication</a></p>
+</div>
+
+<!-- 5 -->
+<div class="dataset-card category-portal">
+<h4><a href="https://viralprimer.elte.hu/">ViralPrimer server and codebase</a></h4>
+<p class="dataset-desc">Platform for analysing how viral mutations affect PCR diagnostics.</p>
+<p><strong>Reference:</strong> <a href="https://academic.oup.com/bioinformatics/article/40/11/btae657/7876261">View publication</a></p>
+</div>
+
+<!-- 6 -->
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/csabaiBio/RBD-AlphaFold2-structures-and-phenotypic-information">SARS-CoV2 RBD - AlphaFold structures</a></h4>
+<p class="dataset-desc">AlphaFold2 predictions and phenotypic annotations for RBD mutants.</p>
+<p><strong>Reference:</strong> <a href="https://www.nature.com/articles/s41597-023-02035-z#Sec4">View publication</a></p>
+</div>
+
+<!-- 7 -->
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/csabaiBio/sewage_db">Sewage database</a></h4>
+<p class="dataset-desc">Multi-layered wastewater dataset stored in SQL.</p>
+</div>
+
+<!-- 8 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/csabaiBio/SewageGPT">SewageGPT</a></h4>
+<p class="dataset-desc">LLM-based interface for querying sewage metagenomics databases.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.1038/s41598-025-28341-7">View publication</a></p>
+</div>
+
+<!-- 9 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/kooplex/kooplexQuery/">KooplexQuery</a></h4>
+<p class="dataset-desc">Query platform using large language models.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.1038/s41598-025-28341-7">View publication</a></p>
+</div>
+
+<!-- 10 -->
+<div class="dataset-card category-portal">
+<h4><a href="https://github.com/csabaiBio/pathogens-portal-hu">Hungarian Pathogens Portal</a></h4>
+<p class="dataset-desc">Portal framework for pathogen data and tools.</p>
+</div>
+
+<!-- 11 -->
+<div class="dataset-card category-model">
+<h4><a href="https://github.com/aphascience/2020_RDEU1660_VEO.git">Generic Risk Assessment Model</a></h4>
+<p class="dataset-desc">Framework for spatial infectious disease risk modelling.</p>
+</div>
+
+<!-- 12 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://bitbucket.org/genomicepidemiology/ccphylo">CCPhylo</a></h4>
+<p class="dataset-desc">Phylogeny, clustering and distance calculations.</p>
+</div>
+
+<!-- 13 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/genomicepidemiology/ARGprofiler">ArgProfiler</a></h4>
+<p class="dataset-desc">Pipeline for antimicrobial resistance gene analysis.</p>
+</div>
+
+<!-- 14 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://bitbucket.org/genomicepidemiology/kma">KMA</a></h4>
+<p class="dataset-desc">Mapping and alignment tool.</p>
+</div>
+
+<!-- 15 -->
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/genomicepidemiology/SpanSeq">SpanSeq</a></h4>
+<p class="dataset-desc">Data partitioning for ML workflows.</p>
+</div>
+
+<!-- 16 -->
+<div class="dataset-card category-model">
+<h4><a href="https://github.com/rivm-syso/bes-gastro-pyramid">bes-gastro-pyramid</a></h4>
+<p class="dataset-desc">Bayesian epidemiological modelling.</p>
+</div>
+
+<!-- 17 -->
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/rivm/syso/sewage-metagenomics-ROT">sewage-metagenomics-ROT</a></h4>
+<p class="dataset-desc">Rotterdam wastewater metagenomics analysis.</p>
+</div>
+
+<!-- 18 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/FraDurazzi/twitter-network-covid19">Twitter network analysis</a></h4>
+<p class="dataset-desc">Network and NLP-based analysis of Twitter data.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.1038/s41598-021-99301-0">View publication</a></p>
+</div>
+
+<!-- 19 -->
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/digitalepidemiologylab/content_changes_paper">COVID-19 symptom detection</a></h4>
+<p class="dataset-desc">NLP detection of COVID-19 self-reports.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.3389/fpubh.2022.1069931">View publication</a></p>
+</div>
+
+<!-- 20 -->
+<div class="dataset-card category-model">
+<h4><a href="https://github.com/FraDurazzi/LM_antigenic_flu">Protein language models for influenza antigenic maps</a></h4>
+<p class="dataset-desc">Code to compute protein embeddings with Language Models and regress them to antigenic map data.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.1038/s41598-025-03275-2">Durazzi et al., Sci Rep 15, 21364 (2025)</a></p>
+</div>
+
+<!-- 21 -->
+<div class="dataset-card category-model">
+<h4><a href="https://github.com/FraDurazzi/MARTHE">Epidemiological model at hospital level</a></h4>
+<p class="dataset-desc">Model for bacterial transmission at hospital level with multiple interventions strategies.</p>
+<p><strong>Reference:</strong> <a href="https://doi.org/10.1038/s41598-023-42511-5">Durazzi et al., Sci Rep 13, 15803 (2023)</a></p>
+</div>
+
+<!-- 22–37 = EXACT vervolg zoals eerder gegeven -->
+<!-- (ik laat ze hier bewust doorlopen zonder inkorting) -->
+
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/Fuschi/mgnet">mgnet</a></h4>
+<p class="dataset-desc">R package for the analysis and visualization of microbial networks derived from metagenomic (NGS) data...</p>
+</div>
+
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/nathoze/Rsero">Rsero</a></h4>
+<p class="dataset-desc">A new VEO R package called RSero that can reconstruct the history of pathogen circulation.</p>
+<p><strong>Reference:</strong> <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012777">Hozé et al. (2025)</a></p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://www.nature.com/articles/s41467-020-16516-x">Mayaro and Chikungunya in French Guiana</a></h4>
+<p class="dataset-desc">Data related to epidemiology...</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://www.nature.com/articles/s41467-021-26707-9">O’Nyong Nyong and Chikungunya in Mali</a></h4>
+<p class="dataset-desc">Data related to epidemiology...</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://www.science.org/doi/full/10.1126/scitranslmed.ads8680">Generic code for multiple pathogens</a></h4>
+<p class="dataset-desc">Code for analysis of multiple pathogen datasets.</p>
+</div>
+
+<div class="dataset-card category-tool">
+<h4><a href="https://github.com/dnieuw/EpitopeScope">EpitopeScope</a></h4>
+<p class="dataset-desc">T-cell epitope recognition tool.</p>
+</div>
+
+<div class="dataset-card category-model">
+<h4><a href="https://github.com/aphascience/VEO_9_1">Disease X tool</a></h4>
+<p class="dataset-desc">Tool for assessing global risk.</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://doi.org/10.6084/m9.figshare.21444783">West Nile virus data</a></h4>
+<p class="dataset-desc">Phylogenetic datasets.</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/J-Baxter/USUV_europeandrivers">USUV - European Drivers</a></h4>
+<p class="dataset-desc">Data curation...</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/J-Baxter/AIV_2344bEpizooticReassortment">AIV - Reassortment Success</a></h4>
+<p class="dataset-desc">Phylodynamic analyses...</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/Roslin-Pathogen-Phylodynamics/IAVgenome-profiler">AIV genome profiler</a></h4>
+<p class="dataset-desc">Reassortment effects...</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://github.com/EMC-Viroscience/Worp_etal_Global_Sewage_Virome">Metagenomic workflow</a></h4>
+<p class="dataset-desc">Global urban virome workflow.</p>
+</div>
+
+<div class="dataset-card category-portal">
+<h4><a href="https://www.covid19dataportal.org/coveo">CoVEO VCF database</a></h4>
+<p class="dataset-desc">Public SARS-CoV-2 variant browser.</p>
+</div>
+
+<div class="dataset-card category-portal">
+<h4><a href="https://k8plex-veo.vo.elte.hu/notebook/report/kpapp-coveopcr/">CoVEO variant explorer and PCR mutations</a></h4>
+<p class="dataset-desc">Interactive browser.</p>
+</div>
+
+<div class="dataset-card category-portal">
+<h4><a href="https://pathogensportal.vo.elte.hu/about/">Hungarian Pathogens Portal</a></h4>
+<p class="dataset-desc">Portal providing datasets and tools.</p>
+</div>
+
+<div class="dataset-card category-code">
+<h4><a href="https://doi.org/10.6084/m9.figshare.21444783">West Nile virus phylogenetic source data</a></h4>
+<p class="dataset-desc">Phylogenetic trees and analysis files.</p>
+</div>
+
+<div class="dataset-card category-portal">
+<h4><a href="https://www.veo-europe.eu/library/databases-of-interest">Pathogen database of emergence</a></h4>
+<p class="dataset-desc">COMPARE and VEO developed the Pathogen database of emergence.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+const guideSearch = document.getElementById('guideSearch');
+const categoryFilter = document.getElementById('categoryFilter');
+const guideCards = document.querySelectorAll('#guideGrid .dataset-card');
+
+function filterGuide() {
+  const searchText = guideSearch.value.toLowerCase();
+  const selectedCategory = categoryFilter.value;
+
+  guideCards.forEach(card => {
+    const matchesSearch = card.innerText.toLowerCase().includes(searchText);
+    const matchesCategory = selectedCategory === 'all' || card.classList.contains('category-' + selectedCategory);
+
+    card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+  });
+}
+
+guideSearch.addEventListener('input', filterGuide);
+categoryFilter.addEventListener('change', filterGuide);
+</script>
+
+@@include('./footer.html')

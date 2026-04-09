@@ -105,86 +105,184 @@
         <article>
             <h3></h3>
 
-            <images>
-				 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://cordis.europa.eu/project/id/874735">
-                    <img src="./images/logoveo.jpg" alt="VEO" title="VEO" style="width: 50%" /> 
-                </p>
-				
-								 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://www.uu.nl/">
-                    <img src="./images/UUlogo.png" alt="UU" title="UU" style="width: 50%" /> 
-                </p>
-				
-								 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://www.lygature.org/">
-                    <img src="./images/logolygature.jpg" alt="Lygature" title="Lygature" style="width: 50%" /> 
-                </p>
-				
-								 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://health.ec.europa.eu/health-emergency-preparedness-and-response-hera_en">
-                    <img src="./images/logoEuropeanCommission.png" alt="European Commission" title="European Commission" style="width: 50%" /> 
-                </p>
+            <style>
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centreert mooi */
+  gap: 30px;
+  margin-top: 20px;
+}
 
-				 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://dwhc.nl/">
-                    <img src="./images/logoDWHC.jpg" alt="DWHC" title="DWHC" style="width: 50%" /> 
-                </p>
+.logo-item {
+  flex: 0 1 120px; /* bepaalt grootte per logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-			<p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://convergence.nl/">
-                    <img src="./images/logoconvergence.jpg" alt="Convergence" title="Convergence" style="width: 50%" /> 
-                </p>
-			
-			     <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://www.wur.nl/">
-                    <img src="./images/logowur.png" alt="Wageningen University & Research" title="Wageningen University & Research" style="width: 50%" /> 
-                </p>
-			
-			     <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://nioo.knaw.nl/">
-                    <img src="./images/logonioo.jpg" alt="NIOO-KNAW" title="NIOO-KNAW" style="width: 50%" /> 
-                </p>
-			
-                 <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				 <a href="https://www.erasmusmc.nl/en/research/departments/viroscience">
-                    <img src="./images/logoerasmus.png" alt="Erasmus MC" title="Erasmus MC" style="width: 50%" /> 
-                </p>
-				
-				<p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				<a href="https://convergence.nl/nl/pandemic-disaster-preparedness-center/">
-                    <img src="./images/logopdpc.jpg"  alt="PDPC" title="PDPC" style="width: 50%" /> 
-                </p>
-				
-				  <p style="float:left; width: 15%; margin-right: 2%; margin-bottom: 0.5em;">
-				  <a href="https://www.onehealthpact.org/">
-                    <img src="./images/logoonehealth.jpg" alt="ONE HEALTH PACT" title="ONE HEALTH PACT" style="width: 50%" /> 
-                </p>
+.logo-item img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
 
-                <p style="float:left; width: 15%; margin-right: 2%; margin-top: 3%; margin-bottom: 0.5em;">
-				    <a href="https://www.ebi.ac.uk/">
-                    <img src="./images/logoebi.png" alt="EMBL-EBI" title="EMBL-EBI" style="width: 50%" /> 
-                </p>
-		
-                <p style="float:left; width: 15%; margin-right: 2%; margin-top: 3%; margin-bottom: 0.5em;">
-				<a href="https://by-covid.org/">
-                    <img src="./images/logobycovid.png" alt="BY-COVID" title="BY-COVID" style="width: 50%" /> 
-					</a>
-                </p>
-				<p style="float:left; width: 15%; margin-right: 2%; margin-top: 3%; margin-bottom: 0.5em;">
-				<a href="https://www.pathogensportal.org/">
-                    <img src="./images/logopathogens.png" alt="Pathogens Portal" title="Pathogens Portal" style="width: 50%" /> 
-					</a>
-                </p>
-               <p style="float:left; width: 15%; margin-right: 2%; margin-top: 3%; margin-bottom: 0.5em;">
-				<a href="https://www.universiteitleiden.nl/">
-                    <img src="./images/logounileiden.png" alt="Universiteit Leiden" title="Universiteit Leiden" style="width: 50%" /> 
-					</a>
-                </p>
-			  
-			  
-                <div class="clear"></div>
-            </images>
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+</style>
+
+
+<style>
+.footer-collab {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 300;           /* lighter weight */
+  font-size: 1.1rem;          /* slightly smaller */
+  color: #888888;             /* soft grey */
+  line-height: 1.6;
+  letter-spacing: 0.5px;      /* adds airy feel */
+  font-family: "Arial", sans-serif;
+}
+</style>
+
+
+
+<div class="logo-grid">
+
+  <a href="https://cordis.europa.eu/project/id/874735" class="logo-item">
+    <img src="./images/logoveo.jpg" alt="VEO">
+  </a>
+
+  <a href="https://www.dtu.dk/english/" class="logo-item">
+    <img src="https://designguide.dtu.dk/-/media/subsites/designguide/design-basics/logo/dtu_logo_roed.jpg" alt="VEO">
+  </a>
+
+<a href="https://www.fli.de/en/" class="logo-item">
+  <img src="https://accelopment.com/wp-content/uploads/2020/07/FLI.jpg" alt="Friedrich-Loeffler-Institute (FLI)">
+</a>
+
+<a href="https://www.gov.uk/government/organisations/animal-and-plant-health-agency" class="logo-item">
+  <img src="https://www.bspp.org.uk/wp-content/uploads/2020/06/APHA-Logo-620x413-1-600x400.png" alt="Animal and Plant Health Agency (DEFRA)">
+</a>
+
+<a href="https://www.elte.hu/en/" class="logo-item">
+  <img src="https://www.elte.hu/sites/default/files/ELTE/logo/elte_logo_en_3.svg" alt="Eötvös Loránd University (ELTE)">
+</a>
+
+<a href="https://www.rivm.nl/en" class="logo-item">
+  <img src="https://epanet.eea.europa.eu/our-group/rivm-logo.png/@@download/image/RIVM%20logo.png" alt="RIVM">
+</a>
+
+<a href="https://www.ifremer.fr/en" class="logo-item">
+  <img src="https://www.vivaldi-project.eu/var/storage/images/_aliases/fullsize/medias-ifremer/medias-vivaldi/images-vivaldi/logos/partners-logos/ifremer-logo/1170835-3-eng-GB/IFREMER-logo.jpg" alt="IFREMER">
+</a>
+
+<a href="https://www.auth.gr/en/" class="logo-item">
+  <img src="https://www.auth.gr/wp-content/uploads/banner-horizontal-default-en-1-1024x333.png" alt="AUTH">
+</a>
+
+<a href="https://www.amsterdamumc.org/en.htm" class="logo-item">
+  <img src="https://www.amsterdamumc.org/static/researchpresentation/images/logo-amsterdamumc.svg" alt="AMC">
+</a>
+
+<a href="https://www.pasteur.fr/en" class="logo-item">
+  <img src="https://www.pasteur.fr/sites/default/files/logo_ppal_bas.png" alt="Institut Pasteur">
+</a>
+
+<a href="https://www.csic.es/en" class="logo-item">
+  <img src="https://www.csic.es/sites/default/files/1-CSIC-Logotipo--Web-Gob-Min-CSIC--COLOR--PNG-RGB-300ppp.png" alt="CSIC">
+</a>
+
+<a href="https://www.epfl.ch/en/" class="logo-item">
+  <img src="https://www.epfl.ch/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg" alt="EPFL">
+</a>
+
+<a href="https://www.cbs.nl/en-gb" class="logo-item">
+  <img src="https://cdn.cbs.nl/icons/navigation/cbs-logo-brand-en.svg" alt="CBS">
+</a>
+
+<a href="https://www.ed.ac.uk/" class="logo-item">
+  <img src="https://www.ed.ac.uk/themes/upstream/wpp_theme/images/logo.png" alt="University of Edinburgh">
+</a>
+
+<a href="https://www.unibo.it/en" class="logo-item">
+  <img src="https://www.unibo.it/en/++theme++unibotheme.portale/img/header/sigillo1x_xl.png?v=2" alt="University of Bologna">
+</a>
+
+<a href="https://www.unipd.it/en/" class="logo-item">
+  <img src="https://800anniunipd.it/wp-content/uploads/2018/11/Logo_Universit%C3%A0_Padova.svg.png" alt="University of Padova">
+</a>
+
+<a href="https://www.uu.se/en" class="logo-item">
+  <img src="https://www.uu.se/images/18.17dda5f1791cdbd287d9b55/1622452923523/uu-logo-red.svg" alt="Uppsala University">
+</a>
+
+<a href="https://www.helsinki.fi/en" class="logo-item">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.uZQa0PQSn_IIw2_ExLRyXQHaC_?rs=1&pid=ImgDetMain&o=7&rm=3" alt="University of Helsinki">
+</a>
+
+<a href="https://www.ku.dk/english/" class="logo-item">
+  <img src="https://www.pngitem.com/pimgs/m/27-277922_university-of-copenhagen-logo-hd-png-download.png" alt="University of Copenhagen">
+</a>
+
+  <a href="https://www.uu.nl/" class="logo-item">
+    <img src="./images/UUlogo.png" alt="UU">
+  </a>
+
+  <a href="https://health.ec.europa.eu/health-emergency-preparedness-and-response-hera_en" class="logo-item">
+    <img src="./images/logoEuropeanCommission.png" alt="European Commission">
+  </a>
+
+  <a href="https://dwhc.nl/" class="logo-item">
+    <img src="./images/logoDWHC.jpg" alt="DWHC">
+  </a>
+
+  <a href="https://convergence.nl/" class="logo-item">
+    <img src="./images/logoconvergence.jpg" alt="Convergence">
+  </a>
+
+  <a href="https://www.wur.nl/" class="logo-item">
+    <img src="./images/logowur.png" alt="WUR">
+  </a>
+
+  <a href="https://nioo.knaw.nl/" class="logo-item">
+    <img src="./images/logonioo.jpg" alt="NIOO-KNAW">
+  </a>
+
+  <a href="https://www.erasmusmc.nl/en/research/departments/viroscience" class="logo-item">
+    <img src="./images/logoerasmus.png" alt="Erasmus MC">
+  </a>
+
+  <a href="https://convergence.nl/nl/pandemic-disaster-preparedness-center/" class="logo-item">
+    <img src="./images/logopdpc.jpg" alt="PDPC">
+  </a>
+
+  <a href="https://www.onehealthpact.org/" class="logo-item">
+    <img src="./images/logoonehealth.jpg" alt="One Health Pact">
+  </a>
+
+  <a href="https://www.ebi.ac.uk/" class="logo-item">
+    <img src="./images/logoebi.png" alt="EMBL-EBI">
+  </a>
+
+  <a href="https://by-covid.org/" class="logo-item">
+    <img src="./images/logobycovid.png" alt="BY-COVID">
+  </a>
+
+  <a href="https://www.pathogensportal.org/" class="logo-item">
+    <img src="./images/logopathogens.png" alt="Pathogens Portal">
+  </a>
+
+  <a href="https://www.universiteitleiden.nl/" class="logo-item">
+    <img src="./images/logounileiden.png" alt="Universiteit Leiden">
+  </a>
+
+</div>
 
         </article>
 		 	 
@@ -197,7 +295,7 @@
    -->
 	<div>
 	 <center>
-	  <p class="vf-footer__legal-text">Pathogens Portal Netherlands 2026 - This site was built by the Pandemic and Disaster Preparedness Center(PDPC) in collaboration with BY-COVID and Health-RI.</p>
+	  <p class="vf-footer__legal-text">Pathogens Portal Netherlands 2026 - Built by the Pandemic and Disaster Preparedness Center(PDPC) in collaboration with research and public health partners.</p>
 	  </center>
 	</div>
 	</hr>

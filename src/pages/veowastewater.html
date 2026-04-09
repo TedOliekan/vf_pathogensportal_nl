@@ -1,0 +1,181 @@
+@@include('./header - veo.html')
+
+<style>
+/* GRID SETUP: responsive, automatic columns */
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* CARD STYLE */
+.dataset-card {
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: 0.15s ease;
+}
+
+.dataset-card:hover {
+  background: #f5f5f5;
+  border-color: #b5b5b5;
+}
+
+/* TITLE BLUE */
+.dataset-card h4 a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.dataset-card h4 a:hover {
+  text-decoration: underline;
+}
+
+/* SOURCE */
+.dataset-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* CATEGORY ICON */
+.dataset-category {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+/* SPACING */
+.dataset-section {
+  margin-bottom: 40px;
+}
+
+.dataset-section h4 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* SEARCH BAR */
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+</style>
+
+<div class="vf-content">
+
+<!-- Banner at the very top -->
+<a href="./veo.html">
+  <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
+</a>
+
+<br><br><br>
+
+<h3>Introduction: Wastewater Surveillance Data</h3>
+<p>
+This page provides access to comprehensive wastewater surveillance datasets from multiple European sites and global projects. These datasets include metagenomic sequencing, viral capture, and longitudinal monitoring of pathogens such as SARS-CoV-2 in sewage systems.  
+Wastewater surveillance is a powerful tool for tracking community-level infections, detecting emerging pathogens, and assessing viral diversity in the environment, supporting timely public health responses.
+</p>
+
+<h3>Available Wastewater Surveillance Datasets from VEO</h3>
+
+<input type="text" id="searchInput" placeholder="Search datasets by keyword..." aria-label="Search datasets">
+
+<div class="dataset-section">
+<div class="dataset-grid" id="datasetGrid">
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: Figshare</div>
+    <h4><a href="https://doi.org/10.6084/m9.figshare.25016147.v1" target="_blank" rel="noopener">Longitudinal European sewage dataset</a></h4>
+    <p>Sewage surveillance dataset from several European cities including metagenomics qPCR and Hi C sequencing</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB68319" target="_blank" rel="noopener">City time series sewage metagenomes</a></h4>
+    <p>Longitudinal sewage metagenomic sequencing assemblies and MAGs</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB41153" target="_blank" rel="noopener">Release experiment sewage metagenomics</a></h4>
+    <p>Metagenomic analysis of sewage to determine detection sensitivity of organisms released into the sewage system</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB40798" target="_blank" rel="noopener">Global sewage sequencing datasets</a></h4>
+    <p>Shotgun metagenomic sequence data for global sewage microbiomes</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB87273" target="_blank" rel="noopener">Global sewage virome</a></h4>
+    <p>Metagenomic viral sequences detected in wastewater samples worldwide</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB48206" target="_blank" rel="noopener">SARS-CoV-2 Rotterdam sewage</a></h4>
+    <p>Longitudinal wastewater sequencing of SARS-CoV-2 genomes</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: IFREMER</div>
+    <h4><a href="https://data-dataref.ifremer.fr/bioinfo/ifremer/obepine/lsem/data/dnasequence-raw/" target="_blank" rel="noopener">SARS-CoV-2 wastewater sequencing France</a></h4>
+    <p>Nanopore sequencing data of SARS-CoV-2 genomes from wastewater</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/ERP113143" target="_blank" rel="noopener">Virus diversity sewage capture metagenomics</a></h4>
+    <p>Capture based metagenomic sequencing dataset from wastewater</p>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-meta">Source: ENA</div>
+    <h4><a href="https://www.ebi.ac.uk/ena/browser/view/ERP166184" target="_blank" rel="noopener">Viral capture kit comparison dataset</a></h4>
+    <p>Dataset comparing sequencing kits for viral detection in wastewater and shellfish</p>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const datasetGrid = document.getElementById('datasetGrid');
+  const datasetCards = datasetGrid.getElementsByClassName('dataset-card');
+
+  searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+
+    Array.from(datasetCards).forEach(card => {
+      const title = card.querySelector('h4').innerText.toLowerCase();
+      const desc = card.querySelector('p').innerText.toLowerCase();
+      if (title.includes(filter) || desc.includes(filter)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+@@include('./footer.html')
