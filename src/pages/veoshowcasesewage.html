@@ -1,0 +1,158 @@
+@@include('./header - veo.html')
+
+<style>
+.dataset-section {
+  margin-bottom: 40px;
+}
+
+.featured-card {
+  border: 2px solid #1a73e8;
+  background: #f7fbff;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.dataset-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.dataset-label {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #444;
+}
+
+.vf-link {
+  color: #1a73e8;
+  text-decoration: none;
+}
+.vf-link:hover {
+  text-decoration: underline;
+}
+
+/* KEY INSIGHT */
+.key-insight {
+  font-size: 12.5px;
+  color: #333;
+  background: #eef5ff;
+  border-left: 3px solid #1a73e8;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+/* POLICY TAG */
+.policy-tag {
+  display: inline-block;
+  font-size: 11px;
+  background: #e8f3ea;
+  color: #1b5e20;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-top: 6px;
+}
+</style>
+
+<div class="vf-content">
+
+<!-- BANNER -->
+<a href="./veo.html">
+  <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
+</a>
+
+<br><br>
+
+<!-- ========================= -->
+<!-- FEATURED DATASET -->
+<!-- ========================= -->
+<div class="dataset-section">
+
+  <div class="dataset-card featured-card">
+
+    <!-- LEFT SIDE -->
+    <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
+
+      <div class="dataset-meta">
+        ⭐ Featured VEO-linked integrated dataset • Wastewater + Metagenomics + AMR + One Health surveillance
+      </div>
+
+      <h4 style="margin-top:6px;">
+        European Sewage Metagenomics Surveillance Resource (Five-city One Health dataset)
+      </h4>
+
+      <p style="font-size:13px; color:#555; margin-top:2px;">
+        <strong>Koopmans & Aarestrup</strong> + VEO consortium partners
+      </p>
+
+      <p style="margin-top:8px;">
+        This integrated VEO-linked One Health dataset combines longitudinal sewage surveillance from five European cities with high-resolution metagenomic profiling. It includes microbial community composition, pathogen detection, antimicrobial resistance (AMR) gene abundance, and metagenome-assembled genomes (MAGs), all linked to spatial and temporal metadata.
+
+        The dataset provides a unique framework for monitoring population-level microbial dynamics and antimicrobial resistance trends using wastewater as a proxy for human and environmental health.
+      </p>
+
+      <div class="dataset-label">
+        🌊 Wastewater • 🧬 Metagenomics • 🦠 AMR • 📊 Epidemiology
+      </div>
+
+      <div class="policy-tag">
+        Policy relevance: ECDC preparedness • One Health surveillance • AMR monitoring
+      </div>
+
+      <!-- LINKS -->
+      <div style="margin-top:14px; display:flex; flex-direction:column; gap:6px;">
+
+        <!-- 1. ENA -->
+        <a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB68319" class="vf-link">
+          📦 ENA sequencing dataset (PRJEB68319)
+        </a>
+
+        <!-- 2. Figshare -->
+        <a href="https://figshare.com/articles/dataset/An_extensive_metagenomic_dataset_of_sewage_samples_across_five_European_cities_A_resource_for_analyzing_microbial_communities_antimicrobial_resistance_and_pathogens/25016147/1" class="vf-link">
+          📊 Figshare dataset (metagenomic sewage resource)
+        </a>
+
+        <!-- 3. GitHub -->
+        <a href="https://github.com/nyeszka/sewage_db" class="vf-link">
+          🔧 GitHub database & analysis tools
+        </a>
+
+        <!-- Publication -->
+        <a href="https://academic.oup.com/database/article/doi/10.1093/database/baaf089/8431323" class="vf-link">
+          📄 Associated publication (Oxford Database Journal)
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div style="flex:1; max-width:50%; display:flex; flex-direction:column;">
+
+      <div class="key-insight">
+        🧠 Key insight: Wastewater metagenomics enables early detection of antimicrobial resistance and pathogen circulation before clinical reporting systems capture signals.
+      </div>
+
+      <img
+        src="https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/database/2026/10.1093_database_baaf089/1/m_baaf089fig1.jpeg?Expires=1777401944&Signature=oUIDSsKD0O7BYI-2qhO8X4u21smuzI0BDmCVdsHmOitFyfhPiSbtwDnbhIQU2z5fVF5wiM6P1E0gJArjUYjC~7qFRLSm8NG-AyNUNeOmCVz0yyfmVnCAJs4P9iVZwdvCYj8p~szCRYYarURUQ5K64~9v~uIdFT-6oHr3Cjy32ZujKYE3Lzdb7L527ZtMLR9Rk-woS~qeDPMZkxpb1xxJJUENy1r2PiJjQbw1vNfXxrvzQReN8lnOVOf~ksK6li6wFL9a1CnkS1MtLeLGWwQLHwNRgTdCrH74~o7JF4WJi3-hFmyWhaH2-mtF-vIzdLsP~ukq5w3PnVzyHa8DxdRYzw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA"
+        alt="Sewage metagenomics overview"
+        style="width:100%; border-radius:6px; border:1px solid #ddd;"
+      />
+
+      <p style="font-size:11px; color:#777; margin-top:6px; line-height:1.3;">
+        Conceptual workflow of sewage metagenomics surveillance across European cities.<br>
+        © Oxford University Press (2025)
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+@@include('./footer.html')

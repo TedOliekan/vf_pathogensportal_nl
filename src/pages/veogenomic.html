@@ -89,17 +89,20 @@
 
 <h3>Introduction: Genomic Data</h3>
 <p>
-Welcome to the VEO Genomic Data portal. This page provides access to curated genomic and metagenomic datasets generated within the VEO project. These data include pathogen genomes, environmental sequencing, and host-associated microbiomes, supporting research into viral spread, antimicrobial resistance, and pathogen evolution.
+Welcome to the VEO Genomic Data portal. This page provides access to curated sequencing datasets within the VEO framework. These include genomic, metagenomic, and environmental sequencing data supporting research into pathogen evolution, microbial ecology, and infectious disease dynamics.
 </p>
 
-<h3>Available Genomic Datasets</h3>
+<h3>Available Datasets</h3>
 
 <!-- SEARCH BOX -->
 <input type="text" id="datasetSearch" placeholder="Search datasets...">
 
-<!-- GENOMIC DATASETS -->
+<!-- ===================== -->
+<!-- 🧬 MODALITY-BASED SECTION -->
+<!-- ===================== -->
 <div class="dataset-section">
-<h4>🧬 Genomic datasets</h4>
+<h4>🧬 Sequencing modality datasets</h4>
+
 <div class="dataset-grid" id="genomicDatasets">
 
 <div class="dataset-card">
@@ -165,9 +168,12 @@ Welcome to the VEO Genomic Data portal. This page provides access to curated gen
 </div>
 </div>
 
-<!-- VIRAL DATASETS -->
+<!-- ===================== -->
+<!-- 🦠 BIOLOGICAL TARGET SECTION -->
+<!-- ===================== -->
 <div class="dataset-section">
-<h4>🦠 Virus-specific datasets</h4>
+<h4>🦠 Viral and pathogen-specific sequencing datasets </h4>
+
 <div class="dataset-grid" id="viralDatasets">
 
 <div class="dataset-card">
@@ -208,7 +214,7 @@ Welcome to the VEO Genomic Data portal. This page provides access to curated gen
 
 <div class="dataset-card">
   <div class="dataset-meta">Source: GISAID</div>
-  <h4><a href="https://gisaid.org">Influenza N2 antigenic dataset</a></h4>
+  <h4><a href="#">Influenza N2 antigenic dataset</a></h4>
   <p>Antigenic and genetic dataset of human influenza N2 virus genes</p>
 </div>
 
@@ -267,7 +273,6 @@ searchInput.addEventListener('input', () => {
     });
   });
 
-  // Show or hide "No results" message
   noResults.style.display = anyVisible ? 'none' : 'block';
 });
 </script>
