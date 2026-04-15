@@ -1,7 +1,6 @@
 @@include('./header - veo.html')
 
 <style>
-/* GRID SETUP: responsive, automatic columns */
 .dataset-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -9,13 +8,15 @@
   margin-bottom: 40px;
 }
 
-/* CARD STYLE */
+.dataset-section {
+  margin-bottom: 40px;
+}
+
 .dataset-card {
   border: 1px solid #e3e3e3;
   border-radius: 6px;
   background: #fafafa;
   padding: 16px;
-  box-sizing: border-box;
   transition: 0.15s ease;
 }
 
@@ -24,63 +25,52 @@
   border-color: #b5b5b5;
 }
 
-/* TITLE BLUE */
-.dataset-card h4 a {
+.tag {
+  font-size: 12px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.raw { background: #e8f0ff; }
+.assembly { background: #e9f7ea; }
+.consensus { background: #fff3e6; }
+
+a {
   color: #1a73e8;
   text-decoration: none;
 }
 
-.dataset-card h4 a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-/* SOURCE */
-.dataset-meta {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 8px;
-}
-
-/* CATEGORY ICON */
-.dataset-category {
-  font-size: 16px;
-  margin-right: 6px;
-}
-
-/* SPACING */
-.dataset-section {
-  margin-bottom: 40px;
-}
-
-.dataset-section h4 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-size: 20px;
-}
-
-/* SEARCH BOX */
-#datasetSearch {
-  padding: 10px;
+#searchBox {
   width: 100%;
-  max-width: 400px;
-  font-size: 16px;
-  margin-bottom: 24px;
+  max-width: 420px;
+  padding: 10px;
+  margin: 10px 0 20px 0;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
-/* "No results" message */
-#noResults {
-  display: none;
-  font-style: italic;
-  color: #999;
-  margin-top: 20px;
+button {
+  margin: 4px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #eee;
 }
 </style>
 
 <div class="vf-content">
 
-<!-- Banner at the very top -->
 <a href="./veo.html">
   <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
 </a>
@@ -89,190 +79,190 @@
 
 <h3>Introduction: Genomic Data</h3>
 <p>
-Welcome to the VEO Genomic Data portal. This page provides access to curated sequencing datasets within the VEO framework. These include genomic, metagenomic, and environmental sequencing data supporting research into pathogen evolution, microbial ecology, and infectious disease dynamics.
+Welcome to the VEO Genomic Data portal. This page provides curated sequencing datasets including genomic, metagenomic, and environmental data.
 </p>
 
-<h3>Available Datasets</h3>
+<h3>Available Genomic Datasets</h3>
 
-<!-- SEARCH BOX -->
-<input type="text" id="datasetSearch" placeholder="Search datasets...">
+<!-- FILTERS -->
+<div>
+  <button onclick="setFilter('all')">All</button>
+  <button onclick="setFilter('raw')">Raw reads</button>
+  <button onclick="setFilter('assembly')">Assemblies</button>
+  <button onclick="setFilter('consensus')">Consensus genomes</button>
 
-<!-- ===================== -->
-<!-- 🧬 MODALITY-BASED SECTION -->
-<!-- ===================== -->
-<div class="dataset-section">
-<h4>🧬 Sequencing modality datasets</h4>
 
-<div class="dataset-grid" id="genomicDatasets">
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: Figshare</div>
-  <h4><a href="https://figshare.com/projects/SARS-CoV-2_RBD_single_mutant_AlphaFold2_structures/150089">SARS-CoV-2 RBD AlphaFold structures</a></h4>
-  <p>AlphaFold predicted structures of all single amino acid mutants in the receptor binding domain</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: Zenodo</div>
-  <h4><a href="https://doi.org/10.5281/zenodo.10057335">SARS-CoV-2 co infection dataset</a></h4>
-  <p>Whole genome sequencing data and analysis of SARS-CoV-2 samples containing multiple lineages</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: ENA</div>
-  <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB37711">Clinical isolate genomes Denmark</a></h4>
-  <p>Genome collection of clinical isolates across Denmark during a single day</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: ASM Journals</div>
-  <h4><a href="https://journals.asm.org/doi/10.1128/msystems.00191-22">Global plasmidomes</a></h4>
-  <p>Plasmid community sequences from sewage samples across multiple countries</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJEB41171">Plasmidomes BioProject</a></h4>
-  <p>Plasmid sequencing dataset used for antimicrobial resistance identification</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB103059">Greenland midden microbiomes</a></h4>
-  <p>Metagenomes from archaeological middens used for pathogen detection</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJEB85755">Mosquito microbiota dataset</a></h4>
-  <p>Bacterial communities associated with mosquito species</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: DTU internal server</div>
-  <h4><a href="#">Geese microbiome dataset</a></h4>
-  <p>Microbiome sequencing data from geese samples in Greenland</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/search/all/?term=PRJEB102994">Single cell cow microbiome sequencing</a></h4>
-  <p>Single cell sequencing data used to detect E coli infections and antimicrobial resistance</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: DTU + IFREMER servers</div>
-  <h4><a href="#">Greenland meltwater metagenomics</a></h4>
-  <p>Environmental metagenomic sequencing of Greenland ice melt water</p>
-</div>
 
 </div>
-</div>
 
-<!-- ===================== -->
-<!-- 🦠 BIOLOGICAL TARGET SECTION -->
-<!-- ===================== -->
-<div class="dataset-section">
-<h4>🦠 Viral and pathogen-specific sequencing datasets </h4>
+<input id="searchBox" placeholder="Search datasets...">
 
-<div class="dataset-grid" id="viralDatasets">
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=OR536441%3AOR536499%5BACCN%5D">Norovirus genomes chronic infections</a></h4>
-  <p>Consensus genome sequences from longitudinal samples of immunocompromised individuals</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: ENA</div>
-  <h4><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB65987">Norovirus raw sequencing reads</a></h4>
-  <p>Raw sequencing reads from metagenomic samples of chronic infections</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI nuccore accessions</div>
-  <h4><a href="#">Enteric viruses Thailand</a></h4>
-  <p>Viral contigs from stool samples of patients with acute infections</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: GISAID</div>
-  <h4><a href="https://gisaid.org">SARS-CoV-2 genomes wastewater Netherlands Belgium</a></h4>
-  <p>Consensus genomes derived from wastewater surveillance samples</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: GISAID</div>
-  <h4><a href="https://gisaid.org">Transatlantic spread of H5N1 influenza virus</a></h4>
-  <p>Genome sequence data used to study spread of avian influenza viruses</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: GenBank</div>
-  <h4><a href="#">Human metapneumovirus genomes</a></h4>
-  <p>Genome sequence data collected from hospitals and general practitioners</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: GISAID</div>
-  <h4><a href="#">Influenza N2 antigenic dataset</a></h4>
-  <p>Antigenic and genetic dataset of human influenza N2 virus genes</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: Pathogens Portal</div>
-  <h4><a href="https://www.pathogensportal.nl/sequences.html">USUV sequences Netherlands</a></h4>
-  <p>Usutu virus genomes from bird surveillance in the Netherlands</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: Pathogens Portal</div>
-  <h4><a href="https://www.pathogensportal.nl/sequences.html">WNV sequences Netherlands</a></h4>
-  <p>West Nile virus genomes from birds mosquitoes and environmental samples</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI nuccore accessions</div>
-  <h4><a href="#">West Nile virus genome collection Greece</a></h4>
-  <p>Genome sequences of West Nile virus collected across multiple years</p>
-</div>
-
-<div class="dataset-card">
-  <div class="dataset-meta">Source: NCBI</div>
-  <h4><a href="https://www.ncbi.nlm.nih.gov/nuccore/2986863443">Usutu virus genome GR-1439h 2024</a></h4>
-  <p>Genome sequence of Usutu virus isolate</p>
-</div>
-
-</div>
-</div>
-
-<!-- NO RESULTS MESSAGE -->
-<div id="noResults">No datasets found matching your search.</div>
-
-@@include('./footer.html')
+<div class="dataset-grid" id="grid"></div>
 
 <script>
-const searchInput = document.getElementById('datasetSearch');
-const datasetGrids = document.querySelectorAll('.dataset-grid');
-const noResults = document.getElementById('noResults');
 
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-  let anyVisible = false;
+const data = [
+  {
+    title: "Norovirus raw reads (chronic infections)",
+    url: "https://www.ebi.ac.uk/ena/browser/view/PRJEB65987",
+    desc: "FASTQ metagenomic reads from immunocompromised patients",
+    type: "raw"
+  },
+  {
+    title: "Mosquito microbiota",
+    url: "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB85755/",
+    desc: "Microbial communities in mosquitoes",
+    type: "raw"
+  },
+  {
+    title: "Single-cell cow microbiome sequencing",
+    url: "https://www.ncbi.nlm.nih.gov/search/all/?term=PRJEB102994",
+    desc: "Single-cell pathogen detection and AMR",
+    type: "raw"
+  },
 
-  datasetGrids.forEach(grid => {
-    const cards = grid.querySelectorAll('.dataset-card');
-    cards.forEach(card => {
-      const title = card.querySelector('h4').innerText.toLowerCase();
-      const desc = card.querySelector('p').innerText.toLowerCase();
-      if (title.includes(query) || desc.includes(query)) {
-        card.style.display = '';
-        anyVisible = true;
-      } else {
-        card.style.display = 'none';
-      }
-    });
+  {
+    title: "Midden microbiomes (Greenland)",
+    url: "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB103059",
+    desc: "Ancient microbiome assemblies",
+    type: "assembly"
+  },
+
+  {
+    title: "SARS-CoV-2 co-infection genomes",
+    url: "https://doi.org/10.5281/zenodo.10057335",
+    desc: "Mixed infection whole genome sequencing",
+    type: "consensus"
+  },
+  {
+    title: "Clinical isolate genomes (Denmark)",
+    url: "https://www.ebi.ac.uk/ena/browser/view/PRJEB37711",
+    desc: "Nationwide bacterial genome collection",
+    type: "consensus"
+  },
+  {
+    title: "Usutu virus GR-2024 isolate",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/2986863443",
+    desc: "Single viral genome isolate",
+    type: "consensus"
+  },
+  {
+    title: "USUV sequences from the Netherlands",
+    url: "https://www.pathogensportal.nl/sequences.html",
+    desc: "Usutu virus (USUV) obtained from: free ranging dead birds, free ranging live birds and dead captive birds",
+    type: "consensus"
+  },
+  {
+    title: "WNV sequences from the Netherlands",
+    url: "https://www.pathogensportal.nl/sequences.html",
+    desc: "West Nile virus (WNV) obtained from: Culex mosquitoes, throat and cloacal swabs of various birds and chicken faeces",
+    type: "consensus"
+  },
+  {
+    title: "West Nile virus Greece collection",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/",
+    desc: "Longitudinal WNV genome dataset",
+    type: "consensus"
+  },
+
+  {
+    title: "West nile virus sequences data, drivers data",
+    url: "https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(25)00525-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1931312825005256%3Fshowall%3Dtrue#supplementary-material",
+    desc: "Longitudinal WNV genome dataset",
+    type: "consensus"
+  },
+
+{
+  title: "West Nile virus & Usutu virus genomes Greece (2018–2024 curated collection)",
+  url: "https://www.ncbi.nlm.nih.gov/nuccore/?term=PV021478.1+OR+PV021477.1+OR+PV021476.1+OR+PV021475.1+OR+PV021474.1+OR+PV021473.1+OR+PV021472.1+OR+PV021471.1+OR+PV021470.1+OR+PV021469.1+OR+PV021468.1+OR+PV021467.1+OR+PV021464.1+OR+PV021463.1+OR+PV021462.1+OR+PV021461.1+OR+PV021460.1+OR+PV021459.1+OR+PV021458.1+OR+PV021457.1+OR+PV021456.1+OR+PV021455.1+OR+OQ053539.1+OR+OQ053538.1+OR+OQ053537.1+OR+OQ053536.1+OR+OQ053535.1+OR+OQ053534.1+OR+OQ053533.1+OR+OQ053532.1+OR+OQ053531.1+OR+OQ053530.1+OR+OQ053529.1+OR+OQ053528.1+OR+OQ053527.1+OR+OQ053526.1+OR+OQ053525.1+OR+OQ053524.1+OR+OQ053523.1+OR+OQ053522.1+OR+OQ053521.1+OR+OQ053520.1+OR+OQ053519.1+OR+OQ053518.1+OR+OQ053517.1+OR+OQ053516.1+OR+OQ053515.1+OR+OL840899.1+OR+OL840898.1+OR+OL840897.1+OR+OL840896.1+OR+OL840895.1+OR+OL840894.1+OR+OL840893.1+OR+OL840892.1+OR+OL840891.1+OR+OL840890.1+OR+OL840889.1+OR+OL840888.1+OR+OL840887.1+OR+OL840886.1+OR+OL840885.1+OR+OL840884.1+OR+OL840883.1+OR+OL840882.1+OR+OL840881.1+OR+OL840880.1+OR+OL840879.1+OR+OL840878.1+OR+OL840877.1+OR+OL840876.1+OR+OL840875.1+OR+OL840874.1+OR+OL840873.1+OR+OL840872.1+OR+OL840871.1+OR+PV021479.1+OR+2986863443",
+  desc: "Curated collection of West Nile virus (WNV) and Usutu virus (USUV) genome sequences from Greece (2018–2024), representing longitudinal surveillance across multiple regions and hosts",
+  type: "consensus"
+},
+
+  {
+    title: "Human metapneumovirus lineages",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/?term=OL794355:OL794483%5Baccn%5D+OR+ON461481:ON461747%5Baccn%5D",
+    desc: "Clinical viral evolution dataset",
+    type: "consensus"
+  },
+
+{
+  title: "SARS-CoV-2 variant panel (Alpha–Omicron reference set)",
+  url: "https://www.ncbi.nlm.nih.gov/nuccore/?term=Alpha+Beta+Gamma+Delta+Omicron+complete+genome+SARS-CoV-2",
+  desc: "Representative SARS-CoV-2 variant genomes used for comparative analysis (Alpha, Beta, Gamma, Delta, Omicron)",
+  type: "consensus"
+},
+  {
+    title: "SARS-CoV-2 Alpha genome",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/MW947280",
+    desc: "Alpha variant genome",
+    type: "consensus"
+  },
+  {
+    title: "SARS-CoV-2 Beta genome",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/OM286905",
+    desc: "Beta variant genome",
+    type: "consensus"
+  },
+  {
+    title: "SARS-CoV-2 Delta genome",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/OM287123",
+    desc: "Delta variant genome",
+    type: "consensus"
+  },
+  {
+    title: "SARS-CoV-2 Omicron BA.1 genome",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/OM287553",
+    desc: "Omicron BA.1 genome",
+    type: "consensus"
+  },
+  {
+    title: "SARS-CoV-2 Omicron BA.2 genome",
+    url: "https://www.ncbi.nlm.nih.gov/nuccore/ON545852",
+    desc: "Omicron BA.2 genome",
+    type: "consensus"
+  }
+];
+
+let currentFilter = "all";
+
+function render() {
+  const grid = document.getElementById("grid");
+  const search = document.getElementById("searchBox").value.toLowerCase();
+  grid.innerHTML = "";
+
+  data.forEach(d => {
+    const matchFilter = currentFilter === "all" || d.type === currentFilter;
+    const matchSearch =
+      d.title.toLowerCase().includes(search) ||
+      d.desc.toLowerCase().includes(search);
+
+    if (!matchFilter || !matchSearch) return;
+
+    const div = document.createElement("div");
+    div.className = "dataset-card";
+
+    div.innerHTML = `
+      <div class="tag ${d.type}">${d.type.toUpperCase()}</div>
+      <h4><a href="${d.url}" target="_blank">${d.title}</a></h4>
+      <p>${d.desc}</p>
+    `;
+
+    grid.appendChild(div);
   });
+}
 
-  noResults.style.display = anyVisible ? 'none' : 'block';
-});
+function setFilter(type) {
+  currentFilter = type;
+  render();
+}
+
+document.getElementById("searchBox").addEventListener("input", render);
+
+render();
+
 </script>
+
+</div>
+
+@@include('./footer.html')

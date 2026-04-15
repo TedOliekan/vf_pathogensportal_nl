@@ -1,7 +1,6 @@
 @@include('./header - veo.html')
 
 <style>
-/* GRID SETUP */
 .dataset-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -9,29 +8,28 @@
   margin-bottom: 40px;
 }
 
-/* CARD STYLE */
+/* CARD STYLE (clean wastewater style) */
 .dataset-card {
   border: 1px solid #e3e3e3;
   border-radius: 6px;
   background: #fafafa;
   padding: 16px;
-  box-sizing: border-box;
   transition: 0.15s ease;
 }
 
-/* Hover effect */
 .dataset-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #f5f5f5;
   border-color: #b5b5b5;
-  transition: 0.2s ease;
 }
 
-/* CATEGORY COLOR CODING */
-.dataset-card.category-computational { border-left: 4px solid #1a73e8; }
-.dataset-card.category-genomics { border-left: 4px solid #fbbc05; }
-.dataset-card.category-social { border-left: 4px solid #ea4335; }
-.dataset-card.category-environmental { border-left: 4px solid #34a853; }
+/* TYPE LABEL (top) */
+.dataset-type {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #888;
+  margin-bottom: 6px;
+}
 
 /* TITLE */
 .dataset-card h4 a {
@@ -43,237 +41,239 @@
   text-decoration: underline;
 }
 
-/* META AUTHOR */
-.dataset-meta {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 4px;
-}
-
 /* DESCRIPTION */
-.dataset-desc {
-  font-size: 14px;
+.dataset-card p {
   margin-top: 8px;
+  font-size: 14px;
   color: #333;
 }
 
-/* SECTION SPACING */
-.dataset-section {
-  margin-bottom: 40px;
+/* META (author moved to bottom) */
+.dataset-meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
 }
 
-.dataset-section h4 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-size: 20px;
+/* FILTER BUTTONS */
+.filter-btn {
+  margin: 4px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* SEARCH & FILTER INPUTS */
-#guideSearch, #categoryFilter {
+#guideSearch {
   width: 100%;
   max-width: 400px;
   padding: 10px 14px;
-  margin-bottom: 24px;
-  font-size: 16px;
+  margin: 10px 0 20px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-#guideSearch:focus, #categoryFilter:focus {
-  border-color: #1a73e8;
-  outline: none;
 }
 </style>
 
 <div class="vf-content">
 
-
-
-<!-- Banner -->
 <a href="./veo.html">
   <img src="./images/CV19DP_banner subpage_veo.jpg" style="width:100%">
 </a>
 
-
-
-<br><br><br>
+<br><br>
 
 <h3>Introduction: Literature</h3>
 <p>
 This page provides access to a selection of publications and supplementary sources within the VEO project that have generated key data-related outputs, including code, models, platforms, databases, and datasets.
 </p>
 
+<h3>Selection of VEO literature with key data-related outputs</h3>
 
-
-<h3>Available Publications, Preprints and Supplementary Sources from VEO</h3>
-
-<!-- Search & Filter Inputs -->
-<div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
-  <input type="text" id="guideSearch" placeholder="Search literature..." aria-label="Search publications">
-  <select id="categoryFilter">
-    <option value="all">All Categories</option>
-    <option value="computational">Computational Tools</option>
-    <option value="genomics">Virus Genomics</option>
-    <option value="social">Social & Epidemiology</option>
-    <option value="environmental">Environmental Surveillance</option>
-  </select>
+<!-- FILTERS -->
+<div>
+  <button class="filter-btn" onclick="setFilter('all')">All</button>
+  <button class="filter-btn" onclick="setFilter('computational')">Computational Tools</button>
+  <button class="filter-btn" onclick="setFilter('genomics')">Virus Genomics</button>
+  <button class="filter-btn" onclick="setFilter('social')">Social & Epidemiology</button>
+  <button class="filter-btn" onclick="setFilter('environmental')">Environmental Surveillance</button>
 </div>
 
+<input id="guideSearch" placeholder="Search literature...">
 
+<div class="dataset-grid" id="grid">
 
-<!-- Grid of Publications -->
-<div class="dataset-grid" id="guideGrid">
-
-  <!-- Computational Tools -->
-  <div class="dataset-card category-computational">
-    <div class="dataset-meta">Visontai et al., 2019</div>
-    <h4><a href="https://arxiv.org/pdf/1911.09553" target="_blank" rel="noopener">Kooplex: collaborative data analytics portal for advancing sciences</a></h4>
-    <p class="dataset-desc">Reframes scientific data analysis as a fully collaborative and reproducible process by embedding computation, data, and sharing into one unified platform.</p>
-  </div>
-
-  <div class="dataset-card category-computational">
-    <div class="dataset-meta">Deutsch et al., 2024</div>
-    <h4><a href="https://academic.oup.com/bioinformatics/article/40/11/btae657/7876261" target="_blank" rel="noopener">ViralPrimer: a web server to monitor viral nucleic acid amplification tests’ primer efficiency during pandemics, with emphasis on SARS-CoV-2 and Mpox</a></h4>
-    <p class="dataset-desc">Introduces new computational algorithms for analyzing metagenomic network data.</p>
-  </div>
-
-  <!-- Virus Genomics -->
-  <div class="dataset-card category-genomics">
-    <div class="dataset-meta">Rahman et al., 2024</div>
-    <h4><a href="https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.001188#R38" target="_blank" rel="noopener">Mobilisation and analyses of publicly available SARS-CoV-2 data for pandemic responses</a></h4>
-    <p class="dataset-desc">Shows that pandemic response can be transformed from fragmented efforts into coordinated, data-driven surveillance through scalable open-data infrastructures, though it implicitly depends on sustained global data sharing.</p>
-  </div>
-
-  <div class="dataset-card category-genomics">
-    <div class="dataset-meta">Mentes et al., 2022</div>
-    <h4><a href="https://www.nature.com/articles/s41598-022-21953-3" target="_blank" rel="noopener">Identification of mutations in SARS-CoV-2 PCR primer regions</a></h4>
-    <p class="dataset-desc">Demonstrates at scale that viral evolution can directly compromise PCR diagnostics, turning test reliability into a moving target.</p>
-  </div>
-
-  <div class="dataset-card category-genomics">
-    <div class="dataset-meta">Kilim et al., 2023</div>
-    <h4><a href="https://www.nature.com/articles/s41597-023-02035-z#Sec4" target="_blank" rel="noopener">SARS-CoV-2 receptor-binding domain deep mutational AlphaFold2 structures</a></h4>
-    <p class="dataset-desc">Provides curated and standardized datasets for pathogen surveillance and analysis.</p>
-  </div>
-
-  <!-- Social & Epidemiology -->
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Durazzi et al., 2021</div>
-    <h4><a href="https://doi.org/10.1038/s41598-021-99301-0" target="_blank" rel="noopener">Clusters of science and health related Twitter users become more isolated during the COVID-19 pandemic</a></h4>
-    <p class="dataset-desc">Analysis of Twitter user clusters discussing science and health topics during the pandemic.</p>
-  </div>
-
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Durazzi et al., 2023</div>
-    <h4><a href="https://doi.org/10.3389/fpubh.2022.1069931" target="_blank" rel="noopener">Dynamics of social media behavior pre- and post-SARS-CoV-2 infection</a></h4>
-    <p class="dataset-desc">It demonstrates that large-scale social media data can function as a real-time, population-level signal for disease progression and surveillance.</p>
-  </div>
-
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Durazzi et al., 2025</div>
-    <h4><a href="https://doi.org/10.1038/s41598-025-03275-2" target="_blank" rel="noopener">Language models learn to represent antigenic properties of human influenza A(H3) virus</a></h4>
-    <p class="dataset-desc">Demonstrates that AI language models can translate viral sequence data into functional antigenic insight, bridging genomics and vaccine decision-making.</p>
-  </div>
-
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Durazzi et al., 2023</div>
-    <h4><a href="https://doi.org/10.1038/s41598-023-42511-5" target="_blank" rel="noopener">Modelling antimicrobial resistance transmission to guide personalized antimicrobial stewardship interventions and infection control policies in healthcare setting: a pilot study</a></h4>
-    <p class="dataset-desc">Shows that antimicrobial resistance control can be personalized by linking transmission dynamics to individual patient data.</p>
-  </div>
-
-  <!-- Environmental Surveillance -->
-  <div class="dataset-card category-environmental">
-    <div class="dataset-meta">Becsei et al., 2025</div>
-    <h4><a href="https://doi.org/10.1038/s41598-025-28341-7" target="_blank" rel="noopener">A case study using sewage metagenomic data for assessment of text-to-SQL capabilities in large language models</a></h4>
-    <p class="dataset-desc">Explores seasonal trends and source attribution using sewage metagenomics data.</p>
-  </div>
-
-  <div class="dataset-card category-environmental">
-    <div class="dataset-meta">Becsei et al., 2024</div>
-    <h4><a href="https://doi.org/10.1038/s41467-024-51957-8" target="_blank" rel="noopener">Time-series sewage metagenomics distinguishes seasonal, human-derived and environmental microbial communities potentially allowing source-attributed surveillance</a></h4>
-    <p class="dataset-desc">Demonstrates that wastewater sequencing can move from bulk monitoring to source-resolved surveillance by separating overlapping microbial signals in time.</p>
-  </div>
-
-  <div class="dataset-card category-computational">
-    <div class="dataset-meta">Hozé et al., 2025</div>
-    <h4><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012777#abstract1" target="_blank" rel="noopener">RSero: A user-friendly R package to reconstruct pathogen circulation history from seroprevalence studies</a></h4>
-    <p class="dataset-desc">RSero is an R package that applies Bayesian serocatalytic models to age-stratified seroprevalence data to estimate the force of infection and reconstruct past pathogen transmission dynamics and outbreak history.</p>
-  </div>
-
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Hozé et al., 2025</div>
-    <h4><a href="https://www.nature.com/articles/s41467-020-16516-x" target="_blank" rel="noopener">Reconstructing Mayaro virus circulation in French Guiana shows frequent spillovers</a></h4>
-    <p class="dataset-desc">Models serological data to show that Mayaro virus mainly circulates in wildlife with occasional spillover to humans, highlighting the importance of accounting for cross-reactivity.</p>
-  </div>
-
-  <div class="dataset-card category-social">
-    <div class="dataset-meta">Hozé et al., 2025</div>
-    <h4><a href="https://www.nature.com/articles/s41467-021-26707-9" target="_blank" rel="noopener">Model-based assessment of Chikungunya and O’nyong-nyong virus circulation in Mali in a serological cross-reactivity context</a></h4>
-    <p class="dataset-desc">Uses serological modelling to disentangle chikungunya and O’nyong-nyong virus transmission in Mali, showing that both viruses have circulated with distinct dynamics and that accounting for cross-reactivity is essential for accurate inference.</p>
-  </div>
-
-  <div class="dataset-card category-computational">
-    <div class="dataset-meta">O’Driscoll  et al., 2025</div>
-    <h4><a href="https://www.science.org/doi/full/10.1126/scitranslmed.ads8680" target="_blank" rel="noopener">Epidemiological and antigenic inferences from serological cross-reactivity among arboviruses</a></h4>
-    <p class="dataset-desc">Develops a framework to analyse multipathogen serological data, enabling joint inference of infection prevalence, transmission history, and antigenic relationships while accounting for antibody cross-reactivity.</p>
-  </div>
-
-  <div class="dataset-card category-genomics">
-    <div class="dataset-meta">Baxter & Yang et al., 2025</div>
-    <h4><a href="https://doi.org/10.1101/2025.07.19.665680" target="_blank" rel="noopener">The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic</a></h4>
-    <p class="dataset-desc">Analyzes the evolutionary success and geographic spread of H5Nx avian influenza reassortants during the 2020–2024 panzootic, highlighting how frequent reassortment and host range expansion have shaped viral adaptation and transmission risk across species.</p>
-  </div>
-
-  <div class="dataset-card category-genomics">
-    <div class="dataset-meta">Harvey et al., 2025</div>
-    <h4><a href="https://doi.org/10.1101/2025.08.20.670882" target="_blank" rel="noopener">Genetic reassortment and host specificity in H5N1 lineages</a></h4>
-    <p class="dataset-desc">Demonstrates that host‑specific reassortment has been a major driver of the evolution and spread of panzootic H5N1 viruses.</p>
-  </div>
-
-  <div class="dataset-card category-environmental">
-    <div class="dataset-meta">Worp et al., 2025</div>
-    <h4><a href="https://doi.org/10.1038/s41467-025-65208-x" target="_blank" rel="noopener">Unveiling the global urban virome through wastewater metagenomics</a></h4>
-    <p class="dataset-desc">Shows that global wastewater sequencing can uncover diverse viral communities and enable early detection of emerging pathogens.</p>
-  </div>
-
+<!-- 1 -->
+<div class="dataset-card" data-type="computational">
+  <div class="dataset-type">Computational Tools</div>
+  <h4><a href="https://arxiv.org/pdf/1911.09553" target="_blank" rel="noopener">Kooplex: collaborative data analytics portal for advancing sciences</a></h4>
+  <p>Reframes scientific data analysis as a fully collaborative and reproducible process by embedding computation, data, and sharing into one unified platform.</p>
+  <div class="dataset-meta">Visontai et al., 2019</div>
 </div>
 
+<!-- 2 -->
+<div class="dataset-card" data-type="computational">
+  <div class="dataset-type">Computational Tools</div>
+  <h4><a href="https://academic.oup.com/bioinformatics/article/40/11/btae657/7876261" target="_blank" rel="noopener">ViralPrimer: a web server to monitor viral nucleic acid amplification tests’ primer efficiency during pandemics, with emphasis on SARS-CoV-2 and Mpox</a></h4>
+  <p>Introduces new computational algorithms for analyzing metagenomic network data.</p>
+  <div class="dataset-meta">Deutsch et al., 2024</div>
 </div>
 
-<div style="text-align:center; margin-top:40px; margin-bottom:40px;">
-  <h3 style="color:#555; font-weight:400; margin-bottom:15px;">
-    Complete Overview of VEO Publications
-  </h3>
-  <p style="color:#777; max-width:600px; margin:0 auto 20px auto;">
-    For a full list of VEO scientific publications, visit the official library.
-  </p>
-  <a href="https://www.veo-europe.eu/library/scientific-publications" 
-     target="_blank" 
-     style="display:inline-block; padding:10px 20px; background-color:#0072c6; color:#fff; text-decoration:none; border-radius:4px; font-weight:bold;">
-    View All Publications
-  </a>
+<!-- 3 -->
+<div class="dataset-card" data-type="genomics">
+  <div class="dataset-type">Virus Genomics</div>
+  <h4><a href="https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.001188#R38">Mobilisation and analyses of publicly available SARS-CoV-2 data for pandemic responses</a></h4>
+  <p>Shows that pandemic response can be transformed from fragmented efforts into coordinated, data-driven surveillance through scalable open-data infrastructures, though it implicitly depends on sustained global data sharing.</p>
+  <div class="dataset-meta">Rahman et al., 2024</div>
+</div>
+
+<!-- 4 -->
+<div class="dataset-card" data-type="genomics">
+  <div class="dataset-type">Virus Genomics</div>
+  <h4><a href="https://www.nature.com/articles/s41598-022-21953-3">Identification of mutations in SARS-CoV-2 PCR primer regions</a></h4>
+  <p>Demonstrates at scale that viral evolution can directly compromise PCR diagnostics, turning test reliability into a moving target.</p>
+  <div class="dataset-meta">Mentes et al., 2022</div>
+</div>
+
+<!-- 5 -->
+<div class="dataset-card" data-type="genomics">
+  <div class="dataset-type">Virus Genomics</div>
+  <h4><a href="https://www.nature.com/articles/s41597-023-02035-z#Sec4">SARS-CoV-2 receptor-binding domain deep mutational AlphaFold2 structures</a></h4>
+  <p>Provides curated and standardized datasets for pathogen surveillance and analysis.</p>
+  <div class="dataset-meta">Kilim et al., 2023</div>
+</div>
+
+<!-- 6 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://doi.org/10.1038/s41598-021-99301-0">Clusters of science and health related Twitter users become more isolated during the COVID-19 pandemic</a></h4>
+  <p>Analysis of Twitter user clusters discussing science and health topics during the pandemic.</p>
+  <div class="dataset-meta">Durazzi et al., 2021</div>
+</div>
+
+<!-- 7 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://doi.org/10.3389/fpubh.2022.1069931">Dynamics of social media behavior pre- and post-SARS-CoV-2 infection</a></h4>
+  <p>It demonstrates that large-scale social media data can function as a real-time, population-level signal for disease progression and surveillance.</p>
+  <div class="dataset-meta">Durazzi et al., 2023</div>
+</div>
+
+<!-- 8 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://doi.org/10.1038/s41598-025-03275-2">Language models learn to represent antigenic properties of human influenza A(H3) virus</a></h4>
+  <p>Demonstrates that AI language models can translate viral sequence data into functional antigenic insight, bridging genomics and vaccine decision-making.</p>
+  <div class="dataset-meta">Durazzi et al., 2025</div>
+</div>
+
+<!-- 9 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://doi.org/10.1038/s41598-023-42511-5">Modelling antimicrobial resistance transmission to guide personalized antimicrobial stewardship interventions and infection control policies in healthcare setting: a pilot study</a></h4>
+  <p>Shows that antimicrobial resistance control can be personalized by linking transmission dynamics to individual patient data.</p>
+  <div class="dataset-meta">Durazzi et al., 2023</div>
+</div>
+
+<!-- 10 -->
+<div class="dataset-card" data-type="environmental">
+  <div class="dataset-type">Environmental Surveillance</div>
+  <h4><a href="https://doi.org/10.1038/s41598-025-28341-7">A case study using sewage metagenomic data for assessment of text-to-SQL capabilities in large language models</a></h4>
+  <p>Explores seasonal trends and source attribution using sewage metagenomics data.</p>
+  <div class="dataset-meta">Becsei et al., 2025</div>
+</div>
+
+<!-- 11 -->
+<div class="dataset-card" data-type="environmental">
+  <div class="dataset-type">Environmental Surveillance</div>
+  <h4><a href="https://doi.org/10.1038/s41467-024-51957-8">Time-series sewage metagenomics distinguishes seasonal, human-derived and environmental microbial communities potentially allowing source-attributed surveillance</a></h4>
+  <p>Demonstrates that wastewater sequencing can move from bulk monitoring to source-resolved surveillance by separating overlapping microbial signals in time.</p>
+  <div class="dataset-meta">Becsei et al., 2024</div>
+</div>
+
+<!-- 12 -->
+<div class="dataset-card" data-type="computational">
+  <div class="dataset-type">Computational Tools</div>
+  <h4><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012777#abstract1">RSero: A user-friendly R package to reconstruct pathogen circulation history from seroprevalence studies</a></h4>
+  <p>RSero is an R package that applies Bayesian serocatalytic models...</p>
+  <div class="dataset-meta">Hozé et al., 2025</div>
+</div>
+
+<!-- 13 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://www.nature.com/articles/s41467-020-16516-x">Reconstructing Mayaro virus circulation in French Guiana shows frequent spillovers</a></h4>
+  <p>Models serological data to show that Mayaro virus mainly circulates in wildlife with occasional spillover to humans.</p>
+  <div class="dataset-meta">Hozé et al., 2025</div>
+</div>
+
+<!-- 14 -->
+<div class="dataset-card" data-type="social">
+  <div class="dataset-type">Social & Epidemiology</div>
+  <h4><a href="https://www.nature.com/articles/s41467-021-26707-9">Model-based assessment of Chikungunya and O’nyong-nyong virus circulation in Mali in a serological cross-reactivity context</a></h4>
+  <p>Uses serological modelling to disentangle chikungunya and O’nyong-nyong virus transmission in Mali.</p>
+  <div class="dataset-meta">Hozé et al., 2025</div>
+</div>
+
+<!-- 15 -->
+<div class="dataset-card" data-type="computational">
+  <div class="dataset-type">Computational Tools</div>
+  <h4><a href="https://www.science.org/doi/full/10.1126/scitranslmed.ads8680">Epidemiological and antigenic inferences from serological cross-reactivity among arboviruses</a></h4>
+  <p>Develops a framework to analyse multipathogen serological data...</p>
+  <div class="dataset-meta">O’Driscoll et al., 2025</div>
+</div>
+
+<!-- 16 -->
+<div class="dataset-card" data-type="genomics">
+  <div class="dataset-type">Virus Genomics</div>
+  <h4><a href="https://doi.org/10.1101/2025.07.19.665680">The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic</a></h4>
+  <p>Analyzes evolutionary success of H5Nx reassortants.</p>
+  <div class="dataset-meta">Baxter & Yang et al., 2025</div>
+</div>
+
+<!-- 17 -->
+<div class="dataset-card" data-type="genomics">
+  <div class="dataset-type">Virus Genomics</div>
+  <h4><a href="https://doi.org/10.1101/2025.08.20.670882">Genetic reassortment and host specificity in H5N1 lineages</a></h4>
+  <p>Shows host-specific reassortment shaping viral evolution.</p>
+  <div class="dataset-meta">Harvey et al., 2025</div>
+</div>
+
+<!-- 18 -->
+<div class="dataset-card" data-type="environmental">
+  <div class="dataset-type">Environmental Surveillance</div>
+  <h4><a href="https://doi.org/10.1038/s41467-025-65208-x">Unveiling the global urban virome through wastewater metagenomics</a></h4>
+  <p>Shows global wastewater sequencing reveals viral diversity and emerging pathogens.</p>
+  <div class="dataset-meta">Worp et al., 2025</div>
+</div>
+
 </div>
 
 <script>
-// Combined search & filter functionality
-const guideSearch = document.getElementById('guideSearch');
-const categoryFilter = document.getElementById('categoryFilter');
-const guideCards = document.querySelectorAll('#guideGrid .dataset-card');
+let currentFilter = "all";
 
-function filterGuide() {
-  const searchText = guideSearch.value.toLowerCase();
-  const selectedCategory = categoryFilter.value;
+function setFilter(type) {
+  currentFilter = type;
+  render();
+}
 
-  guideCards.forEach(card => {
-    const matchesSearch = card.innerText.toLowerCase().includes(searchText);
-    const matchesCategory = selectedCategory === 'all' || card.classList.contains('category-' + selectedCategory);
+const searchBox = document.getElementById("guideSearch");
+const cards = document.querySelectorAll(".dataset-card");
 
-    card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+function render() {
+  const q = searchBox.value.toLowerCase();
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const type = card.getAttribute("data-type");
+
+    const match = (currentFilter === "all" || type === currentFilter) && text.includes(q);
+    card.style.display = match ? "" : "none";
   });
 }
 
-guideSearch.addEventListener('input', filterGuide);
-categoryFilter.addEventListener('change', filterGuide);
+searchBox.addEventListener("input", render);
+render();
 </script>
 
 @@include('./footer.html')
